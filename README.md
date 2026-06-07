@@ -4,10 +4,12 @@
 </p>
 
 # 🔍 Casus Reumatoïde artritis
+👋 Welkom!
+Leuk dat je een kijkje neemt in deze repository! Hier vind je een transcriptomicsanalyse van Reumatoïde Artritis (RA) op basis van RNA-seq data.
 
-Reumatoïde artritis (RA) is een chronische systemische auto-immuunziekte die voornamelijk de gewrichten aantast. Hoewel de exacte oorzaak nog niet volledig bekend is, spelen genetische aanleg, omgevingsfactoren en een ontregeld immuunsysteem een belangrijke rol bij het ontstaan van de ziekte.
+Wat gebeurt er als duizenden genen tegelijk hun mening geven? Dan krijg je een RNA-seq dataset — en hopelijk interessante biologische inzichten. Gelukkig hoef je niet zelf door duizenden genen te bladeren; de data staat al netjes voor je klaar.
 
-In dit onderzoek wordt geanalyseerd welke genen verschillend tot expressie komen bij personen met reumatoïde artritis ten opzichte van gezonde individuen. Daarnaast wordt onderzocht welke metabole routes mogelijk verstoord zijn.
+In dit project onderzoeken we verschillen in genexpressie tussen gezonde controlemonsters en RA-monsters. Daarnaast analyseren we welke biologische processen en metabole routes mogelijk betrokken zijn bij de ontwikkeling van de ziekte.
 
 ## 📁 Inhoud/structuur
 
@@ -28,15 +30,30 @@ Op moleculair niveau spelen verschillende immuuncellen en ontstekingsbevorderend
 
 
 ## Methoden
-De ruwe genexpressiedata die in dit onderzoek is geanalyseerd, werd verstrekt door NHL Stenden Hogeschool via de Blackboard-leeromgeving. De dataset was beschikbaar als gecomprimeerd archiefbestand (Data_RAW.zip).
+De ruwe genexpressiedata die in dit onderzoek is geanalyseerd, werd verstrekt door NHL Stenden Hogeschool via de Blackboard-leeromgeving. De dataset was beschikbaar als gecomprimeerd archiefbestand (Data_RAW.zip). RNA-seq paired-end data van RA en normale controles zijn geanalyseerd in R.
 
-De ruwe data van spreuken is eerst bewerkt voor analyse met behulp van [scripts/01_clean_spell_data.R](scripts/01_clean_spell_data.R). Vervolgens zijn de spreuken geanalyseerd op kracht en nauwkeurigheid met [scripts/02_spell_analysis.R](scripts/02_spell_analysis.R).
+Pipeline
+- Referentiegenoom (GRCh38) geïndexeerd en reads gealigneerd met Rsubread 
+- BAM-bestanden gesorteerd en geïndexeerd met Rsamtools 
+- Genexpressie bepaald met featureCounts (gene-level quantification) 
+- Low-expression filtering toegepast (≤10 reads in <2 samples)
+  
+Differentiële expressie
+- Analyse uitgevoerd met DESeq2 
+- Criteria: adjusted p-value < 0.05 en |log2FC| > 1 
+- PCA gebruikt voor exploratieve analyse
+  
+Functionele analyse
+- GO en KEGG enrichment met clusterProfiler 
+- Visualisaties: volcano plots en PCA 
+- Pathway mapping met pathview
+  
+Output
+- Count matrix, DEG-lijsten en figuren opgeslagen voor reproduceerbaarheid. Volledig script beschikbaar in deze repository.
 
-## 📊 Resultaten
+##  Resultaten
 
-Om inzicht te krijgen in eigenschappen van de te gebruiken spreuken is er een overzicht gemaakt, te vinden in [deze tabel](resultaten/top_10_spells.csv). Onvergeeflijke vloeken zijn niet meegenomen in dit overzicht. 
 
-Om een afweging te maken welke spreuken het meest effectief zijn, is er onderzocht of er een verband te vinden is tussen kracht en accuraatheid. In [het resultaat hiervan](resultaten/spell_power_vs_accuracy.png) is te zien dat er een negatieve daling lijkt te zijn in kracht als de accuraatheid toeneemt. Een uitschieter is de onvergeeflijke vloek *Avada Kedavra*, met zowel hoge kracht als accuraatheid. 
 
 ## Conclusie
 
