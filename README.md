@@ -11,6 +11,15 @@ Wat gebeurt er als duizenden genen tegelijk hun mening geven? Dan krijg je een R
 
 In dit project onderzoeken we verschillen in genexpressie tussen gezonde controlemonsters en RA-monsters. Daarnaast analyseren we welke biologische processen en metabole routes mogelijk betrokken zijn bij de ontwikkeling van de ziekte.
 
+## 👩🏼‍🔬 Auteur
+Romy Kobes | 5544858 | LBM2-C
+
+Biomedisch laboratorium analist | NHL Stenden
+
+Periode code: 25-26 J2P4_BM Innovatieve Diagnostiek
+
+Tutor: Dewi van der Bergh
+
 ## 📁 Inhoud/structuur
 
 - `data/raw/` –  Ruwe dataset van RNA-seq dataset uit het onderzoek van Platzer et al. (2019).
@@ -64,14 +73,39 @@ Gezamenlijk wijzen deze resultaten erop dat de verhoogd geëxpresseerde genen in
 
 <img width="857" height="852" alt="Dotplot RA" src="https://github.com/user-attachments/assets/5bf9f878-4005-42f3-a56f-93841cfcabb9" />
 
-<i>Figuur 2. Gene Ontology (GO) verrijkingsanalyse van genen die verhoogd tot expressie komen in patiënten met Reumatoïde Artritis (RA). Elke stip vertegenwoordigt een verrijkt biologisch proces. De grootte van de stip geeft het aantal genen binnen een GO-term weer, terwijl de kleur de gecorrigeerde p-waarde (padj) weergeeft. De x-as toont de GeneRatio, oftewel het aandeel genen uit de dataset dat betrokken is bij het betreffende proces. Verrijkte processen zijn voornamelijk gerelateerd aan lymfocytdifferentiatie, B-celactivatie en adaptieve immuunresponsen.</i>
+<i>Figuur 3. Gene Ontology (GO) verrijkingsanalyse van genen die verhoogd tot expressie komen in patiënten met Reumatoïde Artritis (RA). Elke stip vertegenwoordigt een verrijkt biologisch proces. De grootte van de stip geeft het aantal genen binnen een GO-term weer, terwijl de kleur de gecorrigeerde p-waarde (padj) weergeeft. De x-as toont de GeneRatio, oftewel het aandeel genen uit de dataset dat betrokken is bij het betreffende proces.</i>
+
+### Up-gereguleerde DEGs in Reumatoïde Artritis veroorzaken sterke verrijking van specifieke ontstekingspathways
+De top 5 meest significant verrijkte KEGG-pathways ($p.adjust < 0.01$) staat gerangschikt op basis van dalende Gene Ratio op de x-as. De NOD-like receptor signaling pathway vertoont de hoogste verrijkingsgraad (Gene Ratio $\approx 0.035$, ~50 genen) en de hoogste significantie ($p.adjust \approx 0.003$). De pathways Th17 cell differentiation (Gene Ratio $\approx 0.0225$, $>50$ genen) en Toll-like receptor signaling pathway (Gene Ratio $\approx 0.021$, $<50$ genen) volgen in het mediane bereik met een $p.adjust$ van circa $0.008$. De IL-17 signaling pathway heeft een Gene Ratio van $\approx 0.0205$, maar valt op door een eveneens zeer hoge significantie ($p.adjust \approx 0.003$) bij ruim 45 genen. De rangschikking sluit met Leishmaniasis, die de laagste verrijkingsgraad ($\approx 0.018$, $p.adjust \approx 0.006$) en de kleinste omvang ($<40$ genen) binnen deze selectie bezit.
+
+<img width="857" height="854" alt="image" src="https://github.com/user-attachments/assets/8d6263a1-2b00-493d-be1c-ec901ba842e3" />
+
+<i>Figuur 4. Dotplot van de top 5 significant verrijkte KEGG-pathways ($p.adjust < 0.05$) op basis van uitsluitend de up-gereguleerde differentieel tot expressie gebrachte genen (DEGs) in Reumatische Artritis (RA). De x-as geeft de Gene Ratio weer (het aandeel DEGs binnen de pathway). De grootte van de stip representeert het absolute aantal genen (Gene count) en de kleur geeft de statistische significantie weer ($p.adjust$, berekend via de Viridis-kleurenschaal waarbij rood de hoogste significantie weerspiegelt).</i>
 
 ### Pathview uitleg
+
+<img width="1492" height="859" alt="hsa05323 pathview" src="https://github.com/user-attachments/assets/53091f8f-b343-4de2-b202-b75300cb99f2" />
+
 
 ##  💡 Conclusie
 
 ##  📚 Bronnenlijst
+Bioinformatics Core Shared Training. (2020). Gene set testing. CRUK Summer School 2020. https://bioinformatics-core-shared-training.github.io/cruk-summer-school-2020/RNAseq/extended_html/06_Gene_set_testing.html
+
+Bioinformatics Core at The University of Texas at Austin. (2014, 18 augustus). GO enrichment using goseq. UT Austin Wiki. https://cloud.wikis.utexas.edu/wiki/spaces/bioiteam/pages/47732482/GO+Enrichment+using+goseq
+
+Kanehisa Laboratories. (2024, 15 augustus). Rheumatoid arthritis - Homo sapiens (human) (KEGG Pathway hsa05323). Kyoto Encyclopedia of Genes and Genomes. https://www.kegg.jp/pathway/hsa05323
+
+Maciejewski, M., Smiljanovic, B., & Grützkau, A. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. PLoS ONE, 14(7), Artikel e0219698. https://doi.org/10.1371/journal.pone.0219698
+
+OpenAI. (2026). ChatGPT (Versie GPT-4o) [Groot taalmodel]. https://chatgpt.com
+
+Puxeddu, I., Alunno, A., & Liguori, M. (2024). Pathogenesis of rheumatoid arthritis: One year in review 2024. Clinical and Experimental Rheumatology, 42(9), 1707–1713. https://doi.org/10.55563/clinexprheumatol/0307ed
+
+Smith, M. H., Emery, P., & Jones, A. K. (2024). Rheumatoid arthritis: A review of the key clinical features and ongoing challenges of the disease. Panminerva Medica, 66(4), 427–442. https://doi.org/10.23736/S0031-0808.24.05272-8
+
+Viatte, S. (2024). Genetics of rheumatoid arthritis. Best Practice & Research Clinical Rheumatology, 38(4), Artikel 101968. https://doi.org/10.1016/j.berh.2024.101968
 
 ##  🤖 AI disclaimer
-
+Voor dit project is gebruikgemaakt van ChatGPT (OpenAI) als ondersteunend hulpmiddel. AI is ingezet voor het genereren van de illustratieve bannerafbeelding bovenaan de GitHub-pagina en voor het verbeteren van de wetenschappelijke formulering van teksten en figuurbijschriften. De bio-informatische analyses, interpretatie van de resultaten, selectie van methoden en biologische conclusies zijn zelfstandig uitgevoerd door de auteur.
 
