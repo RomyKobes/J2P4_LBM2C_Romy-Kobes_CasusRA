@@ -29,33 +29,34 @@ De precieze oorzaak van RA is nog niet volledig bekend, maar onderzoek wijst op 
 Op moleculair niveau spelen verschillende immuuncellen en ontstekingsbevorderende cytokinen een centrale rol in het ziekteproces. Recente studies tonen aan dat naast veranderingen in immuunresponsen ook verstoringen in metabole routes bijdragen aan het ontstaan en de instandhouding van chronische ontsteking (D'Orazio et al., 2024). In dit onderzoek worden verschillen in genexpressie tussen RA-patiënten en gezonde controles geanalyseerd. Daarnaast worden pathway-analyses uitgevoerd om biologische processen en metabole routes te identificeren die mogelijk betrokken zijn bij de pathogenese van RA.
 
 
-## Methoden
-De ruwe genexpressiedata die in dit onderzoek is geanalyseerd, werd verstrekt door NHL Stenden Hogeschool via de Blackboard-leeromgeving. De dataset was beschikbaar als gecomprimeerd archiefbestand (Data_RAW.zip). RNA-seq paired-end data van RA en normale controles zijn geanalyseerd in R.
+## Methode
+Voor deze analyse werd gebruikgemaakt van een publieke RNA-seq dataset uit het onderzoek van Platzer et al. (2019). De dataset bevatte acht synoviumbiopten, afkomstig van vier patiënten met gevestigde Reumatoïde Artritis (RA; ziekteduur >12 maanden) en vier individuen zonder RA. Alle RA-patiënten waren positief voor anti-cyclische gecitrullineerde peptiden (ACPA), terwijl de controlegroep ACPA-negatief was. Een overzicht van de gebruikte samples is weergegeven in Tabel 1.  
 
-Pipeline
-- Referentiegenoom (GRCh38) geïndexeerd en reads gealigneerd met Rsubread 
-- BAM-bestanden gesorteerd en geïndexeerd met Rsamtools 
-- Genexpressie bepaald met featureCounts (gene-level quantification) 
-- Low-expression filtering toegepast (≤10 reads in <2 samples)
-  
-Differentiële expressie
-- Analyse uitgevoerd met DESeq2 
-- Criteria: adjusted p-value < 0.05 en |log2FC| > 1 
-- PCA gebruikt voor exploratieve analyse
-  
-Functionele analyse
-- GO en KEGG enrichment met clusterProfiler 
-- Visualisaties: volcano plots en PCA 
-- Pathway mapping met pathview
-  
-Output
-- Count matrix, DEG-lijsten en figuren opgeslagen voor reproduceerbaarheid. Volledig script beschikbaar in deze repository.
+<i>Tabel 1: Overzicht samples uit onderzoek van Platzer et al. (2019)</i>
+| FASTQ | Leeftijd	| Geslacht |	Groep |
+|-----------|-----------|-----------|-----------|
+| SRR4785819 |	31 | vrouw | Normaal |
+| SRR4785820 |	15 | vrouw | Normaal |
+| SRR4785828 |	31 | vrouw | Normaal |
+| SRR4785831 |	42 | vrouw | Normaal |
+| SRR4785979 |	54 | vrouw | Reumatoïde artritis (vastgesteld) |
+| SRR4785980 |	66 | vrouw | Reumatoïde artritis (vastgesteld) |
+| SRR4785986 |	60 | vrouw | Reumatoïde artritis (vastgesteld) |
+| SRR4785988 |	59 | vrouw | Reumatoïde artritis (vastgesteld) |
+
+
+RNA-seq reads werden gemapt tegen het humane referentiegenoom (GRCh38) met behulp van Rsubread en gekwantificeerd per gen met featureCounts. Verschillen in genexpressie tussen patiënten met Reumatoïde Artritis (RA) en gezonde controles werden bepaald met DESeq2. De analyse richtte zich voornamelijk op genen die significant verhoogd tot expressie kwamen in RA. Deze upregulated genen werden verder onderzocht met Gene Ontology (GO)- en KEGG-pathwayanalyses om betrokken biologische processen en pathways te identificeren. Tot slot werden de gevonden expressieveranderingen gevisualiseerd binnen de KEGG Rheumatoid Arthritis pathway (hsa05323) met behulp van Pathview.
+
+
+
+
 
 ##  Resultaten
-Duidelijke differentiële genexpressie bij Reumatoïde Artritis
+###  Duidelijke differentiële genexpressie bij Reumatoïde Artritis
+De PCA-analyse laat een duidelijke scheiding zien tussen RA-patiënten en gezonde controles langs de eerste principale component (PC1), die 74% van de totale variantie verklaart. Dit wijst erop dat de globale genexpressieprofielen sterk verschillen tussen beide groepen. De volcano plot bevestigt deze bevindingen en toont een groot aantal significant differentieel geëxpresseerde genen. Zowel verhoogde als verlaagde expressie werd waargenomen, waarbij vooral een substantiële groep genen een hogere expressie vertoonde in RA-patiënten.
 
 <img width="1210" height="602" alt="PCA + Volcanoplot RA" src="https://github.com/user-attachments/assets/2ce96263-4e10-4a58-8b1d-ea05e38f04d9" />
-_Figuur 1. Transcriptomische verschillen tussen patiënten met Reumatoïde Artritis (RA) en gezonde controles. (A) Principal Component Analysis (PCA) van RNA-seq expressiegegevens. Elke stip vertegenwoordigt één sample; rode stippen geven gezonde controles weer en blauwe stippen RA-patiënten. De eerste principale component (PC1) verklaart 74% van de totale variantie en laat een duidelijke scheiding zien tussen RA-patiënten en gezonde controles. (B) Volcano plot van de differentiële expressieanalyse. Elke stip vertegenwoordigt één gen. De x-as toont de log₂ fold change en de y-as de statistische significantie (-log₁₀ p-waarde). Rode stippen geven genen weer die zowel significant verschillend geëxpresseerd zijn als een relevante fold change vertonen. Groene stippen voldoen alleen aan de fold-change drempel, blauwe stippen alleen aan de significantiedrempel en grijze stippen zijn niet significant. Genen rechts van de nulwaarde zijn hoger tot expressie gebracht in RA, terwijl genen links van de nulwaarde relatief hoger tot expressie komen in gezonde controles._
+<i>Figuur 2. Transcriptomische verschillen tussen patiënten met Reumatoïde Artritis (RA) en gezonde controles. (A) Principal Component Analysis (PCA) van RNA-seq expressiegegevens. Elke stip vertegenwoordigt één sample; rode stippen geven gezonde controles weer en blauwe stippen RA-patiënten. De eerste principale component (PC1) verklaart 74% van de totale variantie en laat een duidelijke scheiding zien tussen RA-patiënten en gezonde controles. (B) Volcano plot van de differentiële expressieanalyse. Elke stip vertegenwoordigt één gen. De x-as toont de log₂ fold change en de y-as de statistische significantie (-log₁₀ p-waarde). Rode stippen geven genen weer die zowel significant verschillend geëxpresseerd zijn als een relevante fold change vertonen. Groene stippen voldoen alleen aan de fold-change drempel, blauwe stippen alleen aan de significantiedrempel en grijze stippen zijn niet significant. Genen rechts van de nulwaarde zijn hoger tot expressie gebracht in RA, terwijl genen links van de nulwaarde relatief hoger tot expressie komen in gezonde controles.</i>
 
 
 
@@ -63,4 +64,4 @@ _Figuur 1. Transcriptomische verschillen tussen patiënten met Reumatoïde Artri
 
 ## Conclusie
 
-Spreuken met meer accuraatheid lijken minder krachtig te zijn. Een uitzondering op deze trend is de onvergeeflijke vloek *Avada Kedavra*, welke beter niet gebruikt kan worden. 
+
