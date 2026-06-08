@@ -13,23 +13,20 @@ In dit project onderzoeken we verschillen in genexpressie tussen gezonde control
 
 ## 📁 Inhoud/structuur
 
-- `data/raw/` –  
-- `data/processed` -  
-- `scripts/` –
-- `resultaten/` - 
-- `bronnen/` -  
-- `README.md` - 
-- `assets/` - overige documenten voor de opmaak van deze pagina
-- `data_stewardship/` -
+- `data/raw/` –  Ruwe dataset van RNA-seq dataset uit het onderzoek van Platzer et al. (2019).
+- `data/processed` -  Verwerkte dataset gegeneerd met R
+- `scripts/` – Gebruikte script voor casus
+- `README.md` - Informatie over casus
+- `data_stewardship/` - Competentie beheren
 
-## Introductie Reumatoïde artritis
+## 📄 Introductie Reumatoïde artritis
 Reumatoïde artritis (RA) is een chronische systemische auto-immuunziekte die voornamelijk de gewrichten aantast. De ziekte wordt gekenmerkt door synovitis, een ontsteking van het gewrichtsslijmvlies, die kan leiden tot progressieve schade aan kraakbeen en bot. Hierdoor ervaren patiënten vaak pijn, stijfheid en verlies van gewrichtsfunctie. Daarnaast kunnen ook andere organen, zoals het cardiovasculaire systeem en de longen, betrokken raken, waardoor RA wordt beschouwd als een systemische aandoening (Di Matteo & Emery, 2024).
 
 De precieze oorzaak van RA is nog niet volledig bekend, maar onderzoek wijst op een complexe interactie tussen genetische aanleg, omgevingsfactoren en een ontregeld immuunsysteem. Genetische varianten, met name binnen het HLA-gencomplex, verhogen het risico op ziekteontwikkeling. Factoren zoals roken, infecties en veranderingen in het microbioom kunnen vervolgens bijdragen aan het ontstaan van een auto-immuunreactie (Sharma et al., 2024).
 Op moleculair niveau spelen verschillende immuuncellen en ontstekingsbevorderende cytokinen een centrale rol in het ziekteproces. Recente studies tonen aan dat naast veranderingen in immuunresponsen ook verstoringen in metabole routes bijdragen aan het ontstaan en de instandhouding van chronische ontsteking (D'Orazio et al., 2024). In dit onderzoek worden verschillen in genexpressie tussen RA-patiënten en gezonde controles geanalyseerd. Daarnaast worden pathway-analyses uitgevoerd om biologische processen en metabole routes te identificeren die mogelijk betrokken zijn bij de pathogenese van RA.
 
 
-## Methode
+## ⚙️ Methode
 Voor deze analyse werd gebruikgemaakt van een publieke RNA-seq dataset uit het onderzoek van Platzer et al. (2019). De dataset bevatte acht synoviumbiopten, afkomstig van vier patiënten met gevestigde Reumatoïde Artritis (RA; ziekteduur >12 maanden) en vier individuen zonder RA. Alle RA-patiënten waren positief voor anti-cyclische gecitrullineerde peptiden (ACPA), terwijl de controlegroep ACPA-negatief was. Een overzicht van de gebruikte samples is weergegeven in Tabel 1.  
 
 <i>Tabel 1: Overzicht samples uit onderzoek van Platzer et al. (2019)</i>
@@ -51,17 +48,30 @@ RNA-seq reads werden gemapt tegen het humane referentiegenoom (GRCh38) met behul
 
 
 
-##  Resultaten
+##  📊 Resultaten
 ###  Duidelijke differentiële genexpressie bij Reumatoïde Artritis
 De PCA-analyse laat een duidelijke scheiding zien tussen RA-patiënten en gezonde controles langs de eerste principale component (PC1), die 74% van de totale variantie verklaart. Dit wijst erop dat de globale genexpressieprofielen sterk verschillen tussen beide groepen. De volcano plot bevestigt deze bevindingen en toont een groot aantal significant differentieel geëxpresseerde genen. Zowel verhoogde als verlaagde expressie werd waargenomen, waarbij vooral een substantiële groep genen een hogere expressie vertoonde in RA-patiënten.
 
 <img width="1210" height="602" alt="PCA + Volcanoplot RA" src="https://github.com/user-attachments/assets/2ce96263-4e10-4a58-8b1d-ea05e38f04d9" />
 <i>Figuur 2. Transcriptomische verschillen tussen patiënten met Reumatoïde Artritis (RA) en gezonde controles. (A) Principal Component Analysis (PCA) van RNA-seq expressiegegevens. Elke stip vertegenwoordigt één sample; rode stippen geven gezonde controles weer en blauwe stippen RA-patiënten. De eerste principale component (PC1) verklaart 74% van de totale variantie en laat een duidelijke scheiding zien tussen RA-patiënten en gezonde controles. (B) Volcano plot van de differentiële expressieanalyse. Elke stip vertegenwoordigt één gen. De x-as toont de log₂ fold change en de y-as de statistische significantie (-log₁₀ p-waarde). Rode stippen geven genen weer die zowel significant verschillend geëxpresseerd zijn als een relevante fold change vertonen. Groene stippen voldoen alleen aan de fold-change drempel, blauwe stippen alleen aan de significantiedrempel en grijze stippen zijn niet significant. Genen rechts van de nulwaarde zijn hoger tot expressie gebracht in RA, terwijl genen links van de nulwaarde relatief hoger tot expressie komen in gezonde controles.</i>
 
+### Verrijkte immuunprocessen in Reumatoïde Artritis
+De GO-analyse toont aan dat de genen die verhoogd tot expressie komen in RA voornamelijk betrokken zijn bij processen van het adaptieve immuunsysteem. De sterkst verrijkte term was *lymphocyte differentiation* (GeneRatio ≈ 0,040; padj < 1×10⁻⁴), wat wijst op een verhoogde ontwikkeling en specialisatie van lymfocyten. Daarnaast waren processen gerelateerd aan *adaptive immune response* en *lymphocyte mediated immunity* sterk verrijkt (GeneRatio ≈ 0,035–0,038; padj < 1×10⁻⁴), wat suggereert dat immuuncellen een centrale rol spelen in de waargenomen transcriptomische veranderingen.
 
+Ook werd een significante verrijking gevonden voor *B cell activation* (GeneRatio ≈ 0,027; padj ≈ 1–2×10⁻⁴). B-cellen zijn verantwoordelijk voor de productie van antilichamen en worden beschouwd als belangrijke spelers in de pathogenese van Reumatoïde Artritis. Verder waren processen betrokken bij receptor-gemedieerde immuunsignalering sterk vertegenwoordigd, waaronder *immune response-regulating cell surface receptor signaling pathway* (GeneRatio ≈ 0,035; padj < 1×10⁻⁴).
 
+Gezamenlijk wijzen deze resultaten erop dat de verhoogd geëxpresseerde genen in RA voornamelijk betrokken zijn bij activatie, differentiatie en regulatie van immuuncellen. Dit ondersteunt het bekende beeld van Reumatoïde Artritis als een auto-immuunziekte waarbij ontregeling van het adaptieve immuunsysteem een belangrijke rol speelt.
 
+<img width="857" height="852" alt="Dotplot RA" src="https://github.com/user-attachments/assets/5bf9f878-4005-42f3-a56f-93841cfcabb9" />
 
-## Conclusie
+<i>Figuur 2. Gene Ontology (GO) verrijkingsanalyse van genen die verhoogd tot expressie komen in patiënten met Reumatoïde Artritis (RA). Elke stip vertegenwoordigt een verrijkt biologisch proces. De grootte van de stip geeft het aantal genen binnen een GO-term weer, terwijl de kleur de gecorrigeerde p-waarde (padj) weergeeft. De x-as toont de GeneRatio, oftewel het aandeel genen uit de dataset dat betrokken is bij het betreffende proces. Verrijkte processen zijn voornamelijk gerelateerd aan lymfocytdifferentiatie, B-celactivatie en adaptieve immuunresponsen.</i>
+
+### Pathview uitleg
+
+##  💡 Conclusie
+
+##  📚 Bronnenlijst
+
+##  🤖 AI disclaimer
 
 
