@@ -52,6 +52,12 @@ Output
 - Count matrix, DEG-lijsten en figuren opgeslagen voor reproduceerbaarheid. Volledig script beschikbaar in deze repository.
 
 ##  Resultaten
+Duidelijke differentiële genexpressie bij Reumatoïde Artritis
+
+<img width="1210" height="602" alt="PCA + Volcanoplot RA" src="https://github.com/user-attachments/assets/2ce96263-4e10-4a58-8b1d-ea05e38f04d9" />
+_Figuur 1. Transcriptomische verschillen tussen patiënten met Reumatoïde Artritis (RA) en gezonde controles. (A) Principal Component Analysis (PCA) van RNA-seq expressiegegevens. Elke stip vertegenwoordigt één sample; rode stippen geven gezonde controles weer en blauwe stippen RA-patiënten. De eerste principale component (PC1) verklaart 74% van de totale variantie en laat een duidelijke scheiding zien tussen RA-patiënten en gezonde controles. (B) Volcano plot van de differentiële expressieanalyse. Elke stip vertegenwoordigt één gen. De x-as toont de log₂ fold change en de y-as de statistische significantie (-log₁₀ p-waarde). Rode stippen geven genen weer die zowel significant verschillend geëxpresseerd zijn als een relevante fold change vertonen. Groene stippen voldoen alleen aan de fold-change drempel, blauwe stippen alleen aan de significantiedrempel en grijze stippen zijn niet significant. Genen rechts van de nulwaarde zijn hoger tot expressie gebracht in RA, terwijl genen links van de nulwaarde relatief hoger tot expressie komen in gezonde controles._
+
+
 
 
 
