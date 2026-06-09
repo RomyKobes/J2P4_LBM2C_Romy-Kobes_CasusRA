@@ -7,9 +7,9 @@
 👋 Welkom!
 Leuk dat je een kijkje neemt in deze repository! Hier vind je een transcriptomicsanalyse van Reumatoïde Artritis (RA) op basis van RNA-seq data.
 
-Wat gebeurt er als duizenden genen tegelijk hun mening geven? Dan krijg je een RNA-seq dataset — en hopelijk interessante biologische inzichten. Gelukkig hoef je niet zelf door duizenden genen te bladeren; de data staat al netjes voor je klaar.
+Wat gebeurt er als duizenden genen tegelijk hun mening geven? Dan krijg je een RNA-seq dataset  en hopelijk interessante biologische inzichten. Gelukkig hoef je niet zelf door duizenden genen te bladeren; de data staat al netjes voor je klaar.
 
-In dit project onderzoeken we verschillen in genexpressie tussen gezonde controlemonsters en RA-monsters. Daarnaast analyseren we welke biologische processen en metabole routes mogelijk betrokken zijn bij de ontwikkeling van de ziekte.
+In dit project worden verschillen in genexpressie tussen gezonde controles en patiënten met Reumatoïde Artritis (RA) onderzocht. Daarnaast worden functionele verrijkings- en pathway-analyses uitgevoerd om biologische processen en signaalroutes te identificeren die mogelijk bijdragen aan de pathogenese van de ziekte.
 
 ## 👩🏼‍🔬 Auteur
 Romy Kobes | 5544858 | LBM2-C
@@ -32,7 +32,7 @@ Tutor: Dewi van der Bergh
 Reumatoïde artritis (RA) is een chronische systemische auto-immuunziekte die voornamelijk de gewrichten aantast. De ziekte wordt gekenmerkt door synovitis, een ontsteking van het gewrichtsslijmvlies, die kan leiden tot progressieve schade aan kraakbeen en bot. Hierdoor ervaren patiënten vaak pijn, stijfheid en verlies van gewrichtsfunctie. Daarnaast kunnen ook andere organen, zoals het cardiovasculaire systeem en de longen, betrokken raken, waardoor RA wordt beschouwd als een systemische aandoening (Di Matteo & Emery, 2024).
 
 De precieze oorzaak van RA is nog niet volledig bekend, maar onderzoek wijst op een complexe interactie tussen genetische aanleg, omgevingsfactoren en een ontregeld immuunsysteem. Genetische varianten, met name binnen het HLA-gencomplex, verhogen het risico op ziekteontwikkeling. Factoren zoals roken, infecties en veranderingen in het microbioom kunnen vervolgens bijdragen aan het ontstaan van een auto-immuunreactie (Sharma et al., 2024).
-Op moleculair niveau spelen verschillende immuuncellen en ontstekingsbevorderende cytokinen een centrale rol in het ziekteproces. Recente studies tonen aan dat naast veranderingen in immuunresponsen ook verstoringen in metabole routes bijdragen aan het ontstaan en de instandhouding van chronische ontsteking (D'Orazio et al., 2024). In dit onderzoek worden verschillen in genexpressie tussen RA-patiënten en gezonde controles geanalyseerd. Daarnaast worden pathway-analyses uitgevoerd om biologische processen en metabole routes te identificeren die mogelijk betrokken zijn bij de pathogenese van RA.
+Op moleculair niveau spelen verschillende immuuncellen en ontstekingsbevorderende cytokinen een centrale rol in het ziekteproces. Recente studies tonen aan dat veranderingen in immuunresponsen en intracellulaire signaleringsroutes bijdragen aan het ontstaan en de instandhouding van chronische ontsteking (D'Orazio et al., 2024). In dit onderzoek worden verschillen in genexpressie tussen RA-patiënten en gezonde controles geanalyseerd. Daarnaast worden functionele verrijkings- en pathway-analyses uitgevoerd om biologische processen en signaalroutes te identificeren die mogelijk betrokken zijn bij de pathogenese van RA.
 
 
 ## ⚙️ Methode
@@ -76,14 +76,14 @@ Gene Ontology (GO)-analyse van deze up-gereguleerde genen toonde een sterke verr
 <i>Figuur 3. Gene Ontology (GO) verrijkingsanalyse van genen die verhoogd tot expressie komen in patiënten met Reumatoïde Artritis (RA). Elke stip vertegenwoordigt een verrijkt biologisch proces. De grootte van de stip geeft het aantal genen binnen een GO-term weer, terwijl de kleur de gecorrigeerde p-waarde (padj) weergeeft. De x-as toont de GeneRatio, oftewel het aandeel genen uit de dataset dat betrokken is bij het betreffende proces.</i>
 
 ### Up-gereguleerde DEGs in Reumatoïde Artritis veroorzaken sterke verrijking van specifieke ontstekingspathways
-De KEGG-analyse bevestigde dit patroon en identificeerde meerdere ontstekingsgerelateerde pathways. De sterkst verrijkte pathway was de NOD-like receptor signaling pathway (GeneRatio ≈ 0,035; padj ≈ 0,003), gevolgd door Th17 cell differentiation, Toll-like receptor signaling en IL-17 signaling. Deze pathways spelen een centrale rol bij immuunactivatie en chronische ontsteking.
+De KEGG-analyse bevestigde dit patroon en identificeerde meerdere ontstekingsgerelateerde pathways. De sterkst verrijkte pathway was de NOD-like receptor signaling pathway (GeneRatio ≈ 0,035; padj ≈ 0,003), gevolgd door Th17 cell differentiation, Toll-like receptor signaling en IL-17 signaling.
 
 <img width="857" height="854" alt="image" src="https://github.com/user-attachments/assets/8d6263a1-2b00-493d-be1c-ec901ba842e3" />
 
 <i>Figuur 4. Dotplot van de top 5 significant verrijkte KEGG-pathways ($p.adjust < 0.05$) op basis van uitsluitend de up-gereguleerde differentieel tot expressie gebrachte genen (DEGs) in Reumatische Artritis (RA). De x-as geeft de Gene Ratio weer (het aandeel DEGs binnen de pathway). De grootte van de stip representeert het absolute aantal genen (Gene count) en de kleur geeft de statistische significantie weer ($p.adjust$, berekend via de Viridis-kleurenschaal waarbij rood de hoogste significantie weerspiegelt).</i>
 
 ### Visualisatie van expressieveranderingen in de Reumatische Artritis-pathway
-Visualisatie van de KEGG Rheumatoid Arthritis pathway (hsa05323) liet zien dat verschillende genen betrokken bij immuuncelactivatie, cytokinesignalering en gewrichtsschade verhoogd tot expressie kwamen in RA. Verhoogde expressie werd onder andere waargenomen voor CD80/86, CD28, APRIL, BLyS, TLR2/4, CXCL5, IL1B, VEGF, MMP1/3 en CTSL. Deze genen zijn betrokken bij ontstekingsprocessen en weefselafbraak die kenmerkend zijn voor Reumatoïde Artritis.daadwerkelijke gewrichtsschade, zijn de afbraakenzymen MMP1/3 en CTSL sterk verhoogd tot expressie gebracht.
+Visualisatie van de KEGG Rheumatoid Arthritis pathway (hsa05323) liet zien dat verschillende genen betrokken bij immuuncelactivatie, cytokinesignalering en gewrichtsschade verhoogd tot expressie kwamen in RA. Verhoogde expressie werd onder andere waargenomen voor CD80/86, CD28, APRIL, BLyS, TLR2/4, CXCL5, IL1B, VEGF, MMP1/3 en CTSL. Deze genen zijn betrokken bij ontstekingsprocessen en weefselafbraak die kenmerkend zijn voor Reumatoïde Artritis.
 
 <img width="1492" height="859" alt="hsa05323 pathview" src="https://github.com/user-attachments/assets/53091f8f-b343-4de2-b202-b75300cb99f2" />
 
@@ -91,6 +91,15 @@ Visualisatie van de KEGG Rheumatoid Arthritis pathway (hsa05323) liet zien dat v
 
 
 ##  💡 Conclusie
+Deze RNA-seq analyse laat zien dat patiënten met Reumatoïde Artritis (RA) een duidelijk afwijkend genexpressieprofiel hebben ten opzichte van gezonde controles. De PCA-analyse toonde een sterke scheiding tussen beide groepen, wat erop wijst dat RA gepaard gaat met grootschalige veranderingen in genexpressie. De differentiële expressieanalyse identificeerde vervolgens een groot aantal genen die verhoogd tot expressie kwamen in RA.
+
+De GO-analyse liet zien dat deze verhoogd geëxpresseerde genen voornamelijk betrokken zijn bij processen van het adaptieve immuunsysteem. Vooral lymfocytdifferentiatie, B-celactivatie en immuunresponsen waren sterk verrijkt. Dit suggereert dat een verhoogde activiteit van immuuncellen een belangrijke bijdrage levert aan het ontstaan en de instandhouding van de ziekte.
+
+De KEGG-analyse bevestigde deze bevindingen door een sterke verrijking van ontstekingsgerelateerde pathways aan te tonen, waaronder de NOD-like receptor-, Toll-like receptor- en IL-17-signaleringsroutes. Deze pathways worden aangestuurd door genen die verhoogd tot expressie komen in RA en spelen een belangrijke rol bij het initiëren en onderhouden van ontstekingsreacties.
+
+De visualisatie van de Rheumatoid Arthritis pathway (hsa05323) bracht deze resultaten samen en liet zien dat genen betrokken bij immuunactivatie, cytokinesignalering en weefselafbraak verhoogd actief zijn in RA-patiënten. Hierdoor ontstaat een omgeving waarin ontstekingssignalen voortdurend worden versterkt, wat uiteindelijk kan bijdragen aan gewrichtsschade.
+
+De resultaten ondersteunen het huidige inzicht dat een ontregelde immuunrespons een centrale rol speelt in de pathogenese van Reumatoïde Artritis. Verhoogde expressie van genen betrokken bij immuunactivatie en ontstekingssignalering leidt tot activatie van pathways die bijdragen aan chronische ontsteking en uiteindelijk gewrichtsschade. 
 
 ##  📚 Bronnenlijst
 Bioinformatics Core Shared Training. (2020). Gene set testing. CRUK Summer School 2020. https://bioinformatics-core-shared-training.github.io/cruk-summer-school-2020/RNAseq/extended_html/06_Gene_set_testing.html
