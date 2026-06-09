@@ -1,8 +1,8 @@
 #=================================================================================================
 # 1. Instellen working directory PC 
 # =================================================================================================
-
 setwd("D:/OneDrive - NHL Stenden/Leerjaar 2/Periode 4/Transcriptoomanalyse/Casus RA")
+
 # Check of juiste working directory is ingesteld
 getwd()
 
@@ -182,13 +182,19 @@ dev.off()
 EnhancedVolcano(
   res,
   lab = rownames(res),
+  selectLab = c("IL1B", "MMP1", "CTSL1", "IL1A", "VEGFA", "CXCL6", "TNFSF13", "DTL", "CD28", "IL15", "CD80", "TLR2"),
+  drawConnectors = TRUE,
+  max.overlaps = Inf,
+  labSize = 4,
   x = "log2FoldChange",
   y = "padj",
   pCutoff = 0.05,
   FCcutoff = 1,
-  title = "RA versus Normal",
-  drawConnectors = TRUE
+  title = "Highlighted genes are significantly upregulated in Rheumatoid Arthritis"
 )
+
+dev.copy(png, 'volcanoplotRA.png', width = 10, height = 10, units = 'in', res = 500)
+dev.off()
 # =================================================================================================
 # 14. Go-analyse
 # =================================================================================================
@@ -230,7 +236,7 @@ go_bp <- simplify(
   select_fun = min
 )
 # =================================================================================================
-# 15. Dotplot/barplot
+# 15. Dotplot
 # =================================================================================================
 dotplot(go_bp, showCategory = 10, color = "p.adjust") +
   scale_color_viridis_c(option = "D", direction = -1) +
@@ -249,6 +255,19 @@ kegg <- enrichKEGG(
   universe = bg_conversion$ENTREZID,
   pvalueCutoff = 0.05
 )
+
+dotplot(kegg, showCategory = 5, color = "p.adjust") +
+  scale_color_viridis_c(option = "D", direction = -1) +
+  theme_minimal() +
+  labs(
+    title = "KEGG Pathway Enrichment of Up-Regulated DEGs in Rheumatoid Arthritis",
+    size = "Gene count",
+    x = "Gene Ratio"
+  ) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 12), # Iets kleiner lettertype vanwege de langere titel
+    axis.text.y = element_text(size = 10)
+  )
 # =================================================================================================
 # 17. Pathview
 # =================================================================================================
