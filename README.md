@@ -62,6 +62,7 @@ RNA-seq reads werden gealigneerd tegen het humane referentiegenoom GRCh38.p14 (N
 
 
 ##  📊 Resultaten
+Om verschillen in genexpressie tussen RA-patiënten en gezonde controles te onderzoeken, werd een RNA-seq-analyse uitgevoerd. Hierbij lag de focus op genen die verhoogd tot expressie kwamen in RA, waarbij functionele verrijkings- en pathway-analyses werden toegepast om biologische processen en signaalroutes te identificeren die mogelijk bijdragen aan de pathogenese van de ziekte.
 ###  Duidelijke differentiële genexpressie bij Reumatoïde Artritis
 De PCA-analyse liet een duidelijke scheiding zien tussen RA-patiënten en gezonde controles, waarbij de eerste principale component (PC1) 74% van de totale variantie verklaarde. Dit wijst op substantiële verschillen in genexpressie tussen beide groepen. De volcano plot bevestigde deze bevindingen en identificeerde een groot aantal differentieel geëxpresseerde genen, waarvan een aanzienlijk deel verhoogd tot expressie kwam in RA.
 
