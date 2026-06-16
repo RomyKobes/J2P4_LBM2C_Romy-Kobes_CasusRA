@@ -1,4 +1,4 @@
-# J2P4_LBM2C_Romy-Kobes_CasusRA
+# Differentiële genexpressieanalyse toont versterkte immuunactivatie en ontstekingssignalering bij Reumatoïde Artritis
 <p align="center">
 <img width="1536" height="1024" alt="Intro_CasusRA" src="https://github.com/user-attachments/assets/f4702a26-bf39-4e35-b71d-7efeb93ee4be" />
 </p>
