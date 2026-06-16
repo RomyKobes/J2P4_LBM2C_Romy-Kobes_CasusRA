@@ -51,7 +51,7 @@ Voor deze analyse werd gebruikgemaakt van een publieke RNA-seq dataset uit het o
 | SRR4785988 |	59 | vrouw | Reumatoïde artritis (vastgesteld) |
 
 
-RNA-seq reads werden via Rsubread gealigneerd tegen het humane referentiegenoom (GRCh38) en gekwantificeerd met featureCounts. Verschillen in genexpressie tussen patiënten met Reumatische Artritis (RA) en gezonde controles zijn bepaald met DESeq2. De focus lag op significant up-gereguleerde genen in RA, welke functioneel zijn geanalyseerd via GO- en KEGG-pathwayverrijking. Expressieveranderingen zijn tot slot binnen de KEGG RA-pathway (hsa05323) gevisualiseerd met Pathview. Zie Figuur 1 voor de complete workflow; de exacte R-code is gedocumenteerd in de GitHub-map scripts.
+RNA-seq reads werden gealigneerd tegen het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF_000001405.40) met behulp van het R/Bioconductor-package Rsubread (v2.24.0), waarna genexpressie werd gekwantificeerd met de functie featureCounts. Differentiale genexpressie tussen patiënten met Reumatoïde Artritis (RA) en gezonde controles werd bepaald met DESeq2 (v1.50.0) volgens een negatief-binomiaal model. Significant op-gereguleerde genen in RA werden vervolgens onderworpen aan Gene Ontology (GO)- en KEGG-pathwayverrijkingsanalyses. Expressieveranderingen werden gevisualiseerd binnen de KEGG RA-pathway (hsa05323) met Pathview (v1.48.0). De KEGG-database werd geraadpleegd voor pathwayannotaties. De volledige workflow is weergegeven in Figuur 1; de exacte R-code is beschikbaar in de GitHub-map scripts.
 
 <img width="525" height="652" alt="image" src="https://github.com/user-attachments/assets/8748db6d-1f03-419e-9e71-32ff81fe7152" />
 
@@ -106,9 +106,18 @@ Bioinformatics Core Shared Training. (2020). Gene set testing. CRUK Summer Schoo
 
 Bioinformatics Core at The University of Texas at Austin. (2014, 18 augustus). GO enrichment using goseq. UT Austin Wiki. https://cloud.wikis.utexas.edu/wiki/spaces/bioiteam/pages/47732482/GO+Enrichment+using+goseq
 
+Kanehisa, M., Furumichi, M., Sato, Y., Ishiguro-Watanabe, M., & Tanabe, M. (2023). KEGG: integrating viruses and cellular organisms. Nucleic Acids Research, 51(D1), D587–D592. https://doi.org/10.1093/nar/gkac963
 Kanehisa Laboratories. (2024, 15 augustus). Rheumatoid arthritis - Homo sapiens (human) (KEGG Pathway hsa05323). Kyoto Encyclopedia of Genes and Genomes. https://www.kegg.jp/pathway/hsa05323
 
-Maciejewski, M., Smiljanovic, B., & Grützkau, A. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. PLoS ONE, 14(7), Artikel e0219698. https://doi.org/10.1371/journal.pone.0219698
+Liao, Y., Smyth, G. K., & Shi, W. (2019). The R package Rsubread is easier, faster, cheaper and better for alignment and quantification of RNA sequencing reads. Nucleic Acids Research, 47(8), e47. https://doi.org/10.1093/nar/gkz114
+
+Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology, 15(12), 550. https://doi.org/10.1186/s13059-014-0550-8
+
+Luo, W., & Brouwer, C. (2013). Pathview: an R/Bioconductor package for pathway-based data integration and visualization. Bioinformatics, 29(14), 1830–1831. https://doi.org/10.1093/bioinformatics/btt285
+
+Maciejewski, M., Smiljanovic, B., & Grützkau, A. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. PLoS ONE, 14(7), e0219698. https://doi.org/10.1371/journal.pone.0219698
+
+NCBI. (2026). Homo sapiens genome assembly GRCh38.p14 (GCF_000001405.40). National Center for Biotechnology Information. https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/
 
 OpenAI. (2026). ChatGPT (Versie GPT-4o) [Groot taalmodel]. https://chatgpt.com
 
@@ -116,7 +125,7 @@ Puxeddu, I., Alunno, A., & Liguori, M. (2024). Pathogenesis of rheumatoid arthri
 
 Smith, M. H., Emery, P., & Jones, A. K. (2024). Rheumatoid arthritis: A review of the key clinical features and ongoing challenges of the disease. Panminerva Medica, 66(4), 427–442. https://doi.org/10.23736/S0031-0808.24.05272-8
 
-Viatte, S. (2024). Genetics of rheumatoid arthritis. Best Practice & Research Clinical Rheumatology, 38(4), Artikel 101968. https://doi.org/10.1016/j.berh.2024.101968
+Viatte, S. (2024). Genetics of rheumatoid arthritis. Best Practice & Research Clinical Rheumatology, 38(4), 101968. https://doi.org/10.1016/j.berh.2024.101968
 
 ##  🤖 AI disclaimer
 Voor dit project is gebruikgemaakt van ChatGPT (OpenAI) als ondersteunend hulpmiddel. AI is ingezet voor het genereren van de illustratieve bannerafbeelding bovenaan de GitHub-pagina en voor het verbeteren van de wetenschappelijke formulering van teksten en figuurbijschriften. De bio-informatische analyses, interpretatie van de resultaten, selectie van methoden en biologische conclusies zijn zelfstandig uitgevoerd door de auteur.
