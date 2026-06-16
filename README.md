@@ -29,14 +29,14 @@ Tutor: Dewi van der Bergh
 - `data_stewardship/` - Competentie beheren
 
 ## 📄 Introductie Reumatoïde artritis
-Reumatoïde artritis (RA) is een chronische systemische auto-immuunziekte die voornamelijk de gewrichten aantast. De ziekte wordt gekenmerkt door synovitis, een ontsteking van het gewrichtsslijmvlies, die kan leiden tot progressieve schade aan kraakbeen en bot. Hierdoor ervaren patiënten vaak pijn, stijfheid en verlies van gewrichtsfunctie. Daarnaast kunnen ook andere organen, zoals het cardiovasculaire systeem en de longen, betrokken raken, waardoor RA wordt beschouwd als een systemische aandoening (Di Matteo & Emery, 2024).
+Reumatoïde artritis (RA) is een chronische systemische auto-immuunziekte die voornamelijk de gewrichten aantast. De ziekte wordt gekenmerkt door synovitis, een ontsteking van het gewrichtsslijmvlies, die kan leiden tot progressieve schade aan kraakbeen en bot. Hierdoor ervaren patiënten vaak pijn, stijfheid en verlies van gewrichtsfunctie. Daarnaast kunnen ook andere organen, zoals het cardiovasculaire systeem en de longen, betrokken raken, waardoor RA wordt beschouwd als een systemische aandoening [(Di Matteo & Emery, 2024)](https://pmc.ncbi.nlm.nih.gov/articles/PMC13034790/).
 
-De precieze oorzaak van RA is nog niet volledig bekend, maar onderzoek wijst op een complexe interactie tussen genetische aanleg, omgevingsfactoren en een ontregeld immuunsysteem. Genetische varianten, met name binnen het HLA-gencomplex, verhogen het risico op ziekteontwikkeling. Factoren zoals roken, infecties en veranderingen in het microbioom kunnen vervolgens bijdragen aan het ontstaan van een auto-immuunreactie (Sharma et al., 2024).
-Op moleculair niveau spelen verschillende immuuncellen en ontstekingsbevorderende cytokinen een centrale rol in het ziekteproces. Recente studies tonen aan dat veranderingen in immuunresponsen en intracellulaire signaleringsroutes bijdragen aan het ontstaan en de instandhouding van chronische ontsteking (D'Orazio et al., 2024). In dit onderzoek worden verschillen in genexpressie tussen RA-patiënten en gezonde controles geanalyseerd. Daarnaast worden functionele verrijkings- en pathway-analyses uitgevoerd om biologische processen en signaalroutes te identificeren die mogelijk betrokken zijn bij de pathogenese van RA.
+De precieze oorzaak van RA is nog niet volledig bekend, maar onderzoek wijst op een complexe interactie tussen genetische aanleg, omgevingsfactoren en een ontregeld immuunsysteem. Genetische varianten, met name binnen het HLA-gencomplex, verhogen het risico op ziekteontwikkeling. Factoren zoals roken, infecties en veranderingen in het microbioom kunnen vervolgens bijdragen aan het ontstaan van een auto-immuunreactie [(Sharma et al., 2024)](https://pubmed.ncbi.nlm.nih.gov/38955657/).
+Op moleculair niveau spelen verschillende immuuncellen en ontstekingsbevorderende cytokinen een centrale rol in het ziekteproces. Recente studies tonen aan dat veranderingen in immuunresponsen en intracellulaire signaleringsroutes bijdragen aan het ontstaan en de instandhouding van chronische ontsteking [(D'Orazio et al., 2024)](https://pubmed.ncbi.nlm.nih.gov/39315569/). In dit onderzoek worden verschillen in genexpressie tussen RA-patiënten en gezonde controles geanalyseerd. Daarnaast worden functionele verrijkings- en pathway-analyses uitgevoerd om biologische processen en signaalroutes te identificeren die mogelijk betrokken zijn bij de pathogenese van RA.
 
 
 ## ⚙️ Methode
-Voor deze analyse werd gebruikgemaakt van een publieke RNA-seq dataset uit het onderzoek van Platzer et al. (2019). De dataset bevatte acht synoviumbiopten, afkomstig van vier patiënten met gevestigde Reumatoïde Artritis (RA; ziekteduur >12 maanden) en vier individuen zonder RA. Alle RA-patiënten waren positief voor anti-cyclische gecitrullineerde peptiden (ACPA), terwijl de controlegroep ACPA-negatief was. Een overzicht van de gebruikte samples is weergegeven in Tabel 1.  
+Voor deze analyse werd gebruikgemaakt van een publieke RNA-seq dataset uit het onderzoek van [Platzer et al. (2019)](https://pubmed.ncbi.nlm.nih.gov/31344123/). De dataset bevatte acht synoviumbiopten, afkomstig van vier patiënten met gevestigde Reumatoïde Artritis (RA; ziekteduur >12 maanden) en vier individuen zonder RA. Alle RA-patiënten waren positief voor anti-cyclische gecitrullineerde peptiden (ACPA), terwijl de controlegroep ACPA-negatief was. Een overzicht van de gebruikte samples is weergegeven in Tabel 1.  
 
 <i>Tabel 1: Overzicht samples uit onderzoek van Platzer et al. (2019)</i>
 | FASTQ | Leeftijd	| Geslacht |	Groep |
@@ -51,7 +51,7 @@ Voor deze analyse werd gebruikgemaakt van een publieke RNA-seq dataset uit het o
 | SRR4785988 |	59 | vrouw | Reumatoïde artritis (vastgesteld) |
 
 
-RNA-seq reads werden gealigneerd tegen het humane referentiegenoom GRCh38.p14 (NCBI Assembly GCF_000001405.40) met behulp van het R/Bioconductor-package Rsubread (v2.24.0), waarna genexpressie werd gekwantificeerd met de functie featureCounts. Differentiale genexpressie tussen patiënten met Reumatoïde Artritis (RA) en gezonde controles werd bepaald met DESeq2 (v1.50.0) volgens een negatief-binomiaal model. Significant op-gereguleerde genen in RA werden vervolgens onderworpen aan Gene Ontology (GO)- en KEGG-pathwayverrijkingsanalyses. Expressieveranderingen werden gevisualiseerd binnen de KEGG RA-pathway (hsa05323) met Pathview (v1.48.0). De KEGG-database werd geraadpleegd voor pathwayannotaties. De volledige workflow is weergegeven in Figuur 1; de exacte R-code is beschikbaar in de GitHub-map scripts.
+RNA-seq reads werden gealigneerd tegen het humane referentiegenoom [GRCh38.p14 (NCBI Assembly GCF_000001405.40)](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/) met behulp van het R/Bioconductor-package Rsubread (v2.24.0), waarna genexpressie werd gekwantificeerd met de functie featureCounts. Differentiale genexpressie tussen patiënten met Reumatoïde Artritis (RA) en gezonde controles werd bepaald met DESeq2 (v1.50.0) volgens een negatief-binomiaal model. Significant op-gereguleerde genen in RA werden vervolgens onderworpen aan Gene Ontology (GO)- en KEGG-pathwayverrijkingsanalyses. Expressieveranderingen werden gevisualiseerd binnen de KEGG RA-pathway [(hsa05323)](https://www.kegg.jp/pathway/hsa05323) met Pathview (v1.48.0). De KEGG-database werd geraadpleegd voor pathwayannotaties. De volledige workflow is weergegeven in Figuur 1; de exacte R-code is beschikbaar in de GitHub-map scripts.
 
 <img width="525" height="652" alt="image" src="https://github.com/user-attachments/assets/8748db6d-1f03-419e-9e71-32ff81fe7152" />
 
@@ -103,31 +103,55 @@ De visualisatie van de Rheumatoid Arthritis pathway (hsa05323) bracht deze resul
 De resultaten ondersteunen het huidige inzicht dat een ontregelde immuunrespons een centrale rol speelt in de pathogenese van Reumatoïde Artritis. Verhoogde expressie van genen betrokken bij immuunactivatie en ontstekingssignalering leidt tot activatie van pathways die bijdragen aan chronische ontsteking en uiteindelijk gewrichtsschade. 
 
 ##  📚 Bronnenlijst
-Bioinformatics Core Shared Training. (2020). Gene set testing. CRUK Summer School 2020. https://bioinformatics-core-shared-training.github.io/cruk-summer-school-2020/RNAseq/extended_html/06_Gene_set_testing.html
+Bioinformatics Core Shared Training. (2020). Gene set testing. CRUK Summer School 2020. [https://bioinformatics-core-shared-training.github.io/.../06_Gene_set_testing.html](https://bioinformatics-core-shared-training.github.io/cruk-summer-school-2020/RNAseq/extended_html/06_Gene_set_testing.html)
 
-Bioinformatics Core at The University of Texas at Austin. (2014, 18 augustus). GO enrichment using goseq. UT Austin Wiki. https://cloud.wikis.utexas.edu/wiki/spaces/bioiteam/pages/47732482/GO+Enrichment+using+goseq
+<br>
 
-Kanehisa, M., Furumichi, M., Sato, Y., Ishiguro-Watanabe, M., & Tanabe, M. (2023). KEGG: integrating viruses and cellular organisms. Nucleic Acids Research, 51(D1), D587–D592. https://doi.org/10.1093/nar/gkac963
-Kanehisa Laboratories. (2024, 15 augustus). Rheumatoid arthritis - Homo sapiens (human) (KEGG Pathway hsa05323). Kyoto Encyclopedia of Genes and Genomes. https://www.kegg.jp/pathway/hsa05323
+Bioinformatics Core at The University of Texas at Austin. (2014, 18 augustus). GO enrichment using goseq. UT Austin Wiki. [https://cloud.wikis.utexas.edu/wiki/spaces/bioiteam/...](https://cloud.wikis.utexas.edu/wiki/spaces/bioiteam/pages/47732482/GO+Enrichment+using+goseq)
 
-Liao, Y., Smyth, G. K., & Shi, W. (2019). The R package Rsubread is easier, faster, cheaper and better for alignment and quantification of RNA sequencing reads. Nucleic Acids Research, 47(8), e47. https://doi.org/10.1093/nar/gkz114
+<br>
 
-Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology, 15(12), 550. https://doi.org/10.1186/s13059-014-0550-8
+Kanehisa, M., Furumichi, M., Sato, Y., Ishiguro-Watanabe, M., & Tanabe, M. (2023). KEGG: integrating viruses and cellular organisms. *Nucleic Acids Research*, *51*(D1), D587–D592. [https://doi.org/10.1093/nar/gkac963](https://doi.org/10.1093/nar/gkac963)
 
-Luo, W., & Brouwer, C. (2013). Pathview: an R/Bioconductor package for pathway-based data integration and visualization. Bioinformatics, 29(14), 1830–1831. https://doi.org/10.1093/bioinformatics/btt285
+<br>
 
-Maciejewski, M., Smiljanovic, B., & Grützkau, A. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. PLoS ONE, 14(7), e0219698. https://doi.org/10.1371/journal.pone.0219698
+Kanehisa Laboratories. (2024, 15 augustus). Rheumatoid arthritis - Homo sapiens (human) (KEGG Pathway hsa05323). Kyoto Encyclopedia of Genes and Genomes. [https://www.kegg.jp/pathway/hsa05323](https://www.kegg.jp/pathway/hsa05323)
 
-NCBI. (2026). Homo sapiens genome assembly GRCh38.p14 (GCF_000001405.40). National Center for Biotechnology Information. https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/
+<br>
 
-OpenAI. (2026). ChatGPT (Versie GPT-4o) [Groot taalmodel]. https://chatgpt.com
+Liao, Y., Smyth, G. K., & Shi, W. (2019). The R package Rsubread is easier, faster, cheaper and better for alignment and quantification of RNA sequencing reads. *Nucleic Acids Research*, *47*(8), e47. [https://doi.org/10.1093/nar/gkz114](https://doi.org/10.1093/nar/gkz114)
 
-Puxeddu, I., Alunno, A., & Liguori, M. (2024). Pathogenesis of rheumatoid arthritis: One year in review 2024. Clinical and Experimental Rheumatology, 42(9), 1707–1713. https://doi.org/10.55563/clinexprheumatol/0307ed
+<br>
 
-Smith, M. H., Emery, P., & Jones, A. K. (2024). Rheumatoid arthritis: A review of the key clinical features and ongoing challenges of the disease. Panminerva Medica, 66(4), 427–442. https://doi.org/10.23736/S0031-0808.24.05272-8
+Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biology*, *15*(12), 550. [https://doi.org/10.1186/s13059-014-0550-8](https://doi.org/10.1186/s13059-014-0550-8)
 
-Viatte, S. (2024). Genetics of rheumatoid arthritis. Best Practice & Research Clinical Rheumatology, 38(4), 101968. https://doi.org/10.1016/j.berh.2024.101968
+<br>
 
+Luo, W., & Brouwer, C. (2013). Pathview: an R/Bioconductor package for pathway-based data integration and visualization. *Bioinformatics*, *29*(14), 1830–1831. [https://doi.org/10.1093/bioinformatics/btt285](https://doi.org/10.1093/bioinformatics/btt285)
+
+<br>
+
+NCBI. (2026). Homo sapiens genome assembly GRCh38.p14 (GCF_000001405.40). National Center for Biotechnology Information. [https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/)
+
+<br>
+
+OpenAI. (2026). ChatGPT (Versie GPT-4o) [Groot taalmodel]. [https://chatgpt.com](https://chatgpt.com)
+
+<br>
+
+Platzer, A., Nussbaumer, T., Karonitsch, T., Smolen, J. S., & Aletaha, D. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. *PLoS ONE*, *14*(7), Article e0219698. [https://doi.org/10.1371/journal.pone.0219698](https://doi.org/10.1371/journal.pone.0219698)
+
+<br>
+
+Puxeddu, I., Alunno, A., & Liguori, M. (2024). Pathogenesis of rheumatoid arthritis: One year in review 2024. *Clinical and Experimental Rheumatology*, *42*(9), 1707–1713. [https://doi.org/10.55563/clinexprheumatol/0307ed](https://doi.org/10.55563/clinexprheumatol/0307ed)
+
+<br>
+
+Smith, M. H., Emery, P., & Jones, A. K. (2024). Rheumatoid arthritis: A review of the key clinical features and ongoing challenges of the disease. *Panminerva Medica*, *66*(4), 427–442. [https://doi.org/10.23736/S0031-0808.24.05272-8](https://doi.org/10.23736/S0031-0808.24.05272-8)
+
+<br>
+
+Viatte, S. (2024). Genetics of rheumatoid arthritis. *Best Practice & Research Clinical Rheumatology*, *38*(4), 101968. [https://doi.org/10.1016/j.berh.2024.101968](https://doi.org/10.1016/j.berh.2024.101968)
 ##  🤖 AI disclaimer
 Voor dit project is gebruikgemaakt van ChatGPT (OpenAI) als ondersteunend hulpmiddel. AI is ingezet voor het genereren van de illustratieve bannerafbeelding bovenaan de GitHub-pagina en voor het verbeteren van de wetenschappelijke formulering van teksten en figuurbijschriften. De bio-informatische analyses, interpretatie van de resultaten, selectie van methoden en biologische conclusies zijn zelfstandig uitgevoerd door de auteur.
 
