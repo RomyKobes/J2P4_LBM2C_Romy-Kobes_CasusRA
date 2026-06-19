@@ -36,7 +36,7 @@ Op moleculair niveau spelen verschillende immuuncellen en ontstekingsbevorderend
 
 
 ## ⚙️ Methode
-Voor deze analyse wordt gebruikgemaakt van een publieke RNA-seq-dataset uit het onderzoek van [Platzer et al. (2019)](https://pubmed.ncbi.nlm.nih.gov/31344123/). De dataset bevat acht synoviumbiopten, afkomstig van vier patiënten met gevestigde reumatoïde artritis (RA; ziekteduur >12 maanden) en vier individuen zonder RA. Alle RA-patiënten zijn positief voor anti-cyclische gecitrullineerde peptiden (ACPA), terwijl de controlegroep ACPA-negatief is. Een overzicht van de gebruikte samples is weergegeven in Tabel 1
+Voor deze analyse wordt gebruikgemaakt van een publieke RNA-seq-dataset uit het onderzoek van [Platzer et al. (2019)](https://pubmed.ncbi.nlm.nih.gov/31344123/). De dataset bevat acht synoviumbiopten, afkomstig van vier patiënten met vastgestelde reumatoïde artritis (RA; ziekteduur >12 maanden) en vier individuen zonder RA. Alle RA-patiënten zijn positief voor anti-cyclische gecitrullineerde peptiden (ACPA), terwijl de controlegroep ACPA-negatief is. Een overzicht van de gebruikte samples is weergegeven in Tabel 1
 
 <i>Tabel 1: Overzicht samples uit onderzoek van Platzer et al. (2019)</i>
 | FASTQ | Leeftijd	| Geslacht |	Groep |
