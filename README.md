@@ -36,7 +36,7 @@ Op moleculair niveau spelen verschillende immuuncellen en ontstekingsbevorderend
 
 
 ## ⚙️ Methode
-Voor deze analyse werd gebruikgemaakt van een publieke RNA-seq dataset uit het onderzoek van [Platzer et al. (2019)](https://pubmed.ncbi.nlm.nih.gov/31344123/). De dataset bevatte acht synoviumbiopten, afkomstig van vier patiënten met gevestigde Reumatoïde Artritis (RA; ziekteduur >12 maanden) en vier individuen zonder RA. Alle RA-patiënten waren positief voor anti-cyclische gecitrullineerde peptiden (ACPA), terwijl de controlegroep ACPA-negatief was. Een overzicht van de gebruikte samples is weergegeven in Tabel 1.  
+Voor deze analyse wordt gebruikgemaakt van een publieke RNA-seq-dataset uit het onderzoek van [Platzer et al. (2019)](https://pubmed.ncbi.nlm.nih.gov/31344123/). De dataset bevat acht synoviumbiopten, afkomstig van vier patiënten met gevestigde reumatoïde artritis (RA; ziekteduur >12 maanden) en vier individuen zonder RA. Alle RA-patiënten zijn positief voor anti-cyclische gecitrullineerde peptiden (ACPA), terwijl de controlegroep ACPA-negatief is. Een overzicht van de gebruikte samples is weergegeven in Tabel 1
 
 <i>Tabel 1: Overzicht samples uit onderzoek van Platzer et al. (2019)</i>
 | FASTQ | Leeftijd	| Geslacht |	Groep |
@@ -51,7 +51,7 @@ Voor deze analyse werd gebruikgemaakt van een publieke RNA-seq dataset uit het o
 | SRR4785988 |	59 | vrouw | Reumatoïde artritis (vastgesteld) |
 
 
-RNA-seq reads werden gealigneerd tegen het humane referentiegenoom [GRCh38.p14 (NCBI Assembly GCF_000001405.40)](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/) met behulp van het R/Bioconductor-package Rsubread (v2.24.0), waarna genexpressie werd gekwantificeerd met de functie featureCounts. Differentiale genexpressie tussen patiënten met Reumatoïde Artritis (RA) en gezonde controles werd bepaald met DESeq2 (v1.50.0) volgens een negatief-binomiaal model. Significant op-gereguleerde genen in RA werden vervolgens onderworpen aan Gene Ontology (GO)- en KEGG-pathwayverrijkingsanalyses. Expressieveranderingen werden gevisualiseerd binnen de KEGG RA-pathway [(hsa05323)](https://www.kegg.jp/pathway/hsa05323) met Pathview (v1.48.0). De KEGG-database werd geraadpleegd voor pathwayannotaties. De volledige workflow is weergegeven in Figuur 1; de exacte R-code is beschikbaar in de GitHub-map scripts.
+RNA-seq reads worden gealigneerd tegen het humane referentiegenoom [GRCh38.p14 (NCBI Assembly GCF_000001405.40)](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/) met behulp van het R/Bioconductor-package Rsubread (v2.24.0), waarna genexpressie wordt gekwantificeerd met de functie featureCounts. Differentiale genexpressie tussen patiënten met Reumatoïde Artritis (RA) en gezonde controles wordt bepaald met DESeq2 (v1.50.0) volgens een negatief-binomiaal model. Significant opgereguleerde genen in RA worden vervolgens onderworpen aan Gene Ontology (GO)- en KEGG-pathwayverrijkingsanalyses. Expressieveranderingen worden gevisualiseerd binnen de KEGG RA-pathway [(hsa05323)](https://www.kegg.jp/pathway/hsa05323) met Pathview (v1.48.0). De KEGG-database wordt geraadpleegd voor pathwayannotaties. De volledige workflow is weergegeven in Figuur 1; de exacte R-code is beschikbaar in de GitHub-map scripts.
 
 <img width="525" height="652" alt="image" src="https://github.com/user-attachments/assets/8748db6d-1f03-419e-9e71-32ff81fe7152" />
 
